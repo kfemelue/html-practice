@@ -1,0 +1,55 @@
+body {
+
+    background-image: url("https://www.thetreecenter.com/c/uploads/2015/10/Leaves_1-copy-jpg.webp");
+}
+h1{
+    display:block;
+}
+
+.content{
+    background-color: #dbcf70;
+    color: #1f2925;
+    border-color: #B16636;
+    border-style: solid;
+    border-width: thick;
+    border-radius: 10%;
+    width: 80%;
+    height: inherit;
+    left:20%;
+    top:20%;
+}
+#instructions{
+    position: relative;
+    top:10%;
+    left:5%;
+    font-size: larger;
+}
+
+#pizza {
+    height: 20%;
+    width: 20%;
+    border-radius: 10%;
+    border-color: #B7A99F;
+    border-style: solid;
+    border-width: thick;
+}
+
+#pizza-oven {
+    position: relative;
+    left: 40%;
+    height: 20%;
+    width: 20%;
+    border-color: #B7A99F;
+    border-style: solid;
+    border-width: thick;
+}
+
+.list{
+    font-family:'Times New Roman', Times, serif ;
+}
+
+a {
+    position: absolute;
+    color: #1f2925;
+    left: 4%;
+}
