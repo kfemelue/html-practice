@@ -6,21 +6,26 @@
     <link rel="stylesheet"  href="styles.css"></link>
     <title>Pizza Recipe</title>
 </head>
-<body>
-    <div class="content">
-        <div id="instructions">
-            <h1>How to make pizza</h1>
-            <img id="pizza" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSXRjvkpBmof5TwLTEOukJ0PlX5S3cOKdfoA&s" alt="it's a pizza">
-            <ol>
-                <li class="list">roll your dough</li>
-                <li class="list">add sauce</li>
-                <li class="list">add sauce</li>
-                <li class="list">add toppings</li>
-                <li class="list">bake at 380 degrees for 25 min</li>
-            </ol>
+<body class="dark-mode">
+    <div class="body-wrapper">
+        <button onclick="darkMode()" id="light-switch">light switch</button>
+        <div class="content">
+            <div id="instructions">
+                <h1>How to make pizza</h1>
+                <img id="pizza" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSXRjvkpBmof5TwLTEOukJ0PlX5S3cOKdfoA&s" alt="it's a pizza">
+                <ol>
+                    <li class="list">roll your dough</li>
+                    <li class="list">add sauce</li>
+                    <li class="list">add sauce</li>
+                    <li class="list">add toppings</li>
+                    <li class="list">bake at 380 degrees for 25 min</li>
+                </ol>
+                <button onclick="changeImg()" id="changePhoto"> Change Photo</button>
+            </div>
+            <img id="pizza-oven" src="https://www.fornobravo.com/wp-content/uploads/2016/03/nu-napolino70-customer-red-and-black-tile_fire_close-up_2021-Photo-Contest-ig_fb-450x436.jpeg" alt="pizza oven">
+            <a href="about-me.html">About the creator</a>
         </div>
-        <img id="pizza-oven" src="https://www.fornobravo.com/wp-content/uploads/2016/03/nu-napolino70-customer-red-and-black-tile_fire_close-up_2021-Photo-Contest-ig_fb-450x436.jpeg" alt="pizza oven">
-        <a href="https://kfemelue.github.io/about-me/">This Webpage was built by Dili</a>
+        <script src="script.js"></script>
     </div>
 </body>
 </html>
