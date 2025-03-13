@@ -6,10 +6,7 @@ let veggie = "https://www.vindulge.com/wp-content/uploads/2023/02/Vegetarian-Piz
 let pizzas = [cheese, pineapple, veggie];
 
 
-
-
-
-function changeImg() {
+function changeRecipe() {
     let randomIndex = Math.floor(Math.random()*2);
     let header;
 
@@ -22,15 +19,15 @@ function changeImg() {
     }
     
     if (randomIndex === 0 ){
-        header="How to Make Cheese Pizza";
+        header="How to Make a Cheese Pizza";
         if (document.getElementById("optional")){
             document.getElementById("optional").remove()
         }
     } else if (randomIndex===1) {
-        header= "How to Make Pineapple Pizza";
+        header= "How to Make a Pineapple Pizza";
         document.getElementById('optional').innerHTML="add pineapple and other toppings";
     } else if (randomIndex===2) {
-        header="How to Make Vegetable Pizza";
+        header="How to Make a Vegetable Pizza";
         document.getElementById('optional').innerHTML="add veggie toppings";
     };
 
@@ -38,7 +35,7 @@ function changeImg() {
     document.getElementById('pizza').src = pizzas[randomIndex];
 }
 
-function darkMode(){
+function toggleDarkMode(){
     let body = document.body;
     body.classList.toggle('dark-mode');
 }

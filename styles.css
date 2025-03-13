@@ -19,7 +19,7 @@ h1{
     border-width: thick;
     border-radius: 10%;
     width: 80%;
-    height: inherit;
+    height: auto;
     left:10%;
     top:10%;
 }
@@ -32,7 +32,7 @@ h1{
     border-width: thick;
     border-radius: 10%;
     width: 80%;
-    height: inherit;
+    height: auto;
     left:10%;
     top:10%;
 }
@@ -60,18 +60,18 @@ h1{
 }
 #pizza-oven {
     position: relative;
-    left: 40%;
-    height: 20%;
-    width: 20%;
+    left: 25%;
+    height: 30%;
+    width: 30%;
     border-color: #B7A99F;
     border-style: solid;
     border-width: thick;
 }
 .dark-mode #pizza-oven {
     position: relative;
-    left: 40%;
-    height: 20%;
-    width: 20%;
+    left: 25%;
+    height: 30%;
+    width: 30%;
     border-color: #36759d;
     border-style: solid;
     border-width: thick;
@@ -108,4 +108,13 @@ a {
 }
 #bio{
     font-family:'Times New Roman', Times, serif ;
+}
+#change-recipe{
+    position: absolute;
+    bottom: 10%;
+}
+#light-switch{
+    position: absolute;
+    top: 5%;
+    left: 80%;
 }
