@@ -60,7 +60,7 @@ h1{
 }
 #pizza-oven {
     position: relative;
-    left: 25%;
+    left: 35%;
     height: 30%;
     width: 30%;
     border-color: #B7A99F;
@@ -69,7 +69,7 @@ h1{
 }
 .dark-mode #pizza-oven {
     position: relative;
-    left: 25%;
+    left: 35%;
     height: 30%;
     width: 30%;
     border-color: #36759d;
