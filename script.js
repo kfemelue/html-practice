@@ -11,13 +11,34 @@ let pizzas = [cheese, pineapple, veggie];
 
 function changeImg() {
     let randomIndex = Math.floor(Math.random()*2);
-    console.log(randomIndex);
+    let header;
+
+    let list = document.getElementById("add-cheese");
+    if (randomIndex!==0 && !document.getElementById("optional")) {
+        let addToppings = document.createElement('li');
+        addToppings.innerHTML = "add toppings";
+        addToppings.id="optional";
+        list.appendChild(addToppings);
+    }
+    
+    if (randomIndex === 0 ){
+        header="How to Make Cheese Pizza";
+        if (document.getElementById("optional")){
+            document.getElementById("optional").remove()
+        }
+    } else if (randomIndex===1) {
+        header= "How to Make Pineapple Pizza";
+        document.getElementById('optional').innerHTML="add pineapple and other toppings";
+    } else if (randomIndex===2) {
+        header="How to Make Vegetable Pizza";
+        document.getElementById('optional').innerHTML="add veggie toppings";
+    };
+
+    document.getElementById("heading").innerHTML=header;
     document.getElementById('pizza').src = pizzas[randomIndex];
 }
 
 function darkMode(){
-    // let bodyParent = document.body.parentNode;
     let body = document.body;
-    // bodyParent.classList.toggle('dark-mode');
     body.classList.toggle('dark-mode');
 }
