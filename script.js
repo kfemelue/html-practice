@@ -7,7 +7,7 @@ let pizzas = [cheese, pineapple, veggie];
 
 
 function changeRecipe() {
-    let randomIndex = Math.floor(Math.random()*2);
+    let randomIndex = Math.round(Math.random()*2);
     let header;
 
     let list = document.getElementById("add-cheese");
@@ -19,15 +19,15 @@ function changeRecipe() {
     }
     
     if (randomIndex === 0 ){
-        header="How to Make a Cheese Pizza";
+        header="How to make a cheese pizza";
         if (document.getElementById("optional")){
             document.getElementById("optional").remove()
         }
     } else if (randomIndex===1) {
-        header= "How to Make a Pineapple Pizza";
+        header= "How to make a pineapple pizza";
         document.getElementById('optional').innerHTML="add pineapple and other toppings";
     } else if (randomIndex===2) {
-        header="How to Make a Vegetable Pizza";
+        header="How to make a vegetable pizza";
         document.getElementById('optional').innerHTML="add veggie toppings";
     };
 
