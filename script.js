@@ -1,26 +1,36 @@
 class Recipe {
-    constructor(imageSource, heading ){
+    constructor(imageSource, heading, optionalStep ){
         this.imageSource=imageSource;
         this.heading=heading;
+        this.addToppings = optionalStep;
     }
 }
 
 const cheese = new Recipe(
     "https://therecipecritic.com/wp-content/uploads/2023/01/white_pizza-2-500x500.jpg",
-    "How to make a cheese pizza"
+    "How to make a cheese pizza",
+    ""
 );
 
 const pineapple = new Recipe(
     "https://whipandwander.com/wp-content/uploads/2022/04/Pepperoni-and-Pineapple-Pizza-with-Hot-Honey-1.jpg",
-    "How to make a pineapple pizza"
+    "How to make a pineapple pizza",
+    "add pineapple and other toppings"
 )
 
 const veggie = new Recipe(
     "https://www.vindulge.com/wp-content/uploads/2023/02/Vegetarian-Pizza-with-Caramelized-Onions-Mushrooms-Jalapeno-FI.jpg",
-    "How to make a vegetable pizza"
+    "How to make a vegetable pizza",
+    "add veggie toppings"
 )
 
-const pizzas = [cheese, pineapple, veggie];
+const pepperoni = new Recipe(
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSXRjvkpBmof5TwLTEOukJ0PlX5S3cOKdfoA&s",
+    "How to make Pepperoni Pizza",
+    "add pepperoni"
+)
+
+const pizzas = [cheese, pineapple, veggie, pepperoni];
 const pizzaImage = document.getElementById("pizza");
 
 let hasBeenSpun=false;
@@ -35,28 +45,24 @@ pizzaImage.addEventListener('click', function(){
 });
 
 function changeRecipe() {
-    let randomIndex = Math.round(Math.random()*2);
+    let randomIndex = Math.round(Math.random()*(pizzas.length-1));
     let header = pizzas[randomIndex].heading;
 
     let list = document.getElementById("add-cheese");
     if (randomIndex!==0 && !document.getElementById("optional")) {
-        let addToppings = document.createElement('li');
-        addToppings.innerHTML = "add toppings";
-        addToppings.id="optional";
-        list.appendChild(addToppings);
+        let toppings = document.createElement('li');
+        toppings.innerHTML = pizzas[randomIndex]['addToppings'];
+        toppings.id="optional";
+        list.appendChild(toppings);
     }
     
-    if (randomIndex === 0 ){
+    if (pizzas[randomIndex].heading === "How to make a cheese pizza" ){
         if (document.getElementById("optional")){
             document.getElementById("optional").remove()
         }
-    } else if (randomIndex===1) {
-        header= "How to make a pineapple pizza";
-        document.getElementById('optional').innerHTML="add pineapple and other toppings";
-    } else if (randomIndex===2) {
-        header="How to make a vegetable pizza";
-        document.getElementById('optional').innerHTML="add veggie toppings";
-    };
+    }else{
+        document.getElementById('optional').innerHTML = pizzas[randomIndex]['addToppings'];
+    }
 
     document.getElementById("heading").innerHTML=header;
     document.getElementById('pizza').src = pizzas[randomIndex].imageSource;
