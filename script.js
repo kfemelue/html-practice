@@ -26,7 +26,7 @@ const veggie = new Recipe(
 
 const pepperoni = new Recipe(
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSXRjvkpBmof5TwLTEOukJ0PlX5S3cOKdfoA&s",
-    "How to make Pepperoni Pizza",
+    "How to make pepperoni Pizza",
     "add pepperoni"
 )
 
@@ -48,7 +48,7 @@ function changeRecipe() {
     let randomIndex = Math.round(Math.random()*(pizzas.length-1));
     let toppingsString = pizzas[randomIndex]['addToppings'];
     let list = document.getElementById("add-cheese");
-    
+
     if (randomIndex!==0 && !document.getElementById("optional")) {
         let toppings = document.createElement('li');
         toppings.innerHTML = toppingsString;
