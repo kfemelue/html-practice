@@ -1,14 +1,42 @@
+class Recipe {
+    constructor(imageSource, heading ){
+        this.imageSource=imageSource;
+        this.heading=heading;
+    }
+}
 
-let cheese = "https://therecipecritic.com/wp-content/uploads/2023/01/white_pizza-2-500x500.jpg"
-let pineapple = "https://www.yeprecipes.com/data/media/7/pepperoni-pineapple-jalapeno-pizza.jpg"; 
-let veggie = "https://www.vindulge.com/wp-content/uploads/2023/02/Vegetarian-Pizza-with-Caramelized-Onions-Mushrooms-Jalapeno-FI.jpg";
+const cheese = new Recipe(
+    "https://therecipecritic.com/wp-content/uploads/2023/01/white_pizza-2-500x500.jpg",
+    "How to make a cheese pizza"
+);
 
-let pizzas = [cheese, pineapple, veggie];
+const pineapple = new Recipe(
+    "https://whipandwander.com/wp-content/uploads/2022/04/Pepperoni-and-Pineapple-Pizza-with-Hot-Honey-1.jpg",
+    "How to make a pineapple pizza"
+)
 
+const veggie = new Recipe(
+    "https://www.vindulge.com/wp-content/uploads/2023/02/Vegetarian-Pizza-with-Caramelized-Onions-Mushrooms-Jalapeno-FI.jpg",
+    "How to make a vegetable pizza"
+)
+
+const pizzas = [cheese, pineapple, veggie];
+const pizzaImage = document.getElementById("pizza");
+
+let hasBeenSpun=false;
+
+pizzaImage.addEventListener('click', function(){
+    if (hasBeenSpun){
+        pizzaImage.className="spin-back"
+    }else{
+        pizzaImage.className="spin"
+    }
+    hasBeenSpun = !hasBeenSpun
+});
 
 function changeRecipe() {
     let randomIndex = Math.round(Math.random()*2);
-    let header;
+    let header = pizzas[randomIndex].heading;
 
     let list = document.getElementById("add-cheese");
     if (randomIndex!==0 && !document.getElementById("optional")) {
@@ -19,7 +47,6 @@ function changeRecipe() {
     }
     
     if (randomIndex === 0 ){
-        header="How to make a cheese pizza";
         if (document.getElementById("optional")){
             document.getElementById("optional").remove()
         }
@@ -32,7 +59,7 @@ function changeRecipe() {
     };
 
     document.getElementById("heading").innerHTML=header;
-    document.getElementById('pizza').src = pizzas[randomIndex];
+    document.getElementById('pizza').src = pizzas[randomIndex].imageSource;
 }
 
 function toggleDarkMode(){

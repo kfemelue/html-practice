@@ -50,6 +50,14 @@ h1{
     border-style: solid;
     border-width: thick;
 }
+.spin{
+    transform: rotate(360deg);
+    transition: transform 2s linear;
+}
+.spin-back{
+    transform: rotate(0deg);
+    transition: transform 2s linear;
+}
 .dark-mode #pizza{
     height: 20%;
     width: 20%;
