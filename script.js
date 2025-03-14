@@ -46,12 +46,12 @@ pizzaImage.addEventListener('click', function(){
 
 function changeRecipe() {
     let randomIndex = Math.round(Math.random()*(pizzas.length-1));
-    let header = pizzas[randomIndex].heading;
-
+    let toppingsString = pizzas[randomIndex]['addToppings'];
     let list = document.getElementById("add-cheese");
+    
     if (randomIndex!==0 && !document.getElementById("optional")) {
         let toppings = document.createElement('li');
-        toppings.innerHTML = pizzas[randomIndex]['addToppings'];
+        toppings.innerHTML = toppingsString;
         toppings.id="optional";
         list.appendChild(toppings);
     }
@@ -61,10 +61,10 @@ function changeRecipe() {
             document.getElementById("optional").remove()
         }
     }else{
-        document.getElementById('optional').innerHTML = pizzas[randomIndex]['addToppings'];
+        document.getElementById('optional').innerHTML = toppingsString;
     }
 
-    document.getElementById("heading").innerHTML=header;
+    document.getElementById("heading").innerHTML=pizzas[randomIndex].heading;
     document.getElementById('pizza').src = pizzas[randomIndex].imageSource;
 }
 
