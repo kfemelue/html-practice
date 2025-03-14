@@ -19,7 +19,7 @@ h1{
     border-width: thick;
     border-radius: 10%;
     width: 80%;
-    height: 100%;
+    height: auto;
     left:10%;
     top:10%;
 }
@@ -32,7 +32,7 @@ h1{
     border-width: thick;
     border-radius: 10%;
     width: 80%;
-    height: 100%;
+    height: auto;
     left:10%;
     top:10%;
 }
@@ -129,7 +129,7 @@ a {
 iframe{
     position:relative;
     width: 90%;
-    height: 100%;
+    height: auto;
     top: 10%;
     left: 5%;
     bottom: 5%;
